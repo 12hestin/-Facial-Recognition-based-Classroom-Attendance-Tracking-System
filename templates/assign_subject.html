@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Subject</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='assign_subject.css') }}">
+
+</head>
+<body>
+    <div class="container">
+
+    <h1>ASSIGN SUBJECT</h1>
+    <form method="POST" action="/assign_subject">
+        <label for="teacher_username">Teacher Username:</label><br>
+        <select id="teacher_username" name="teacher_username">
+            {% for teacher in teachers %}
+                <option value="{{ teacher[2] }}">{{ teacher[1] }} ({{ teacher[2] }})</option>
+            {% endfor %}
+        </select>
+        <label for="subject_name">Select Subject:</label>
+        <select name="subject_name" id="subject_name">
+            <option value="CD">Compiler Design</option>
+            <option value="AAD">Algorithm Analysis & Design</option>
+            <option value="CCW">Comprehensive Course Work</option>
+            <option value="CGIP">Computer Graphics and Image Processing </option>
+            <option value="DCC">Data And Computer Communication</option>
+            <option value="IEFT">Industrial Economics and foreign Trade</option>
+            <option value="NL">Networking Lab</option>
+            <option value="MP">Mini Project</option>
+        </select>    
+
+        <input type="submit" value="Assign Subject">
+        <!-- Flash Messages -->
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <ul>
+        {% for message in messages %}
+            <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endwith %}
+
+    </form>
+    </div>
+    <h2>Subjects Assigned</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Subject Name</th>
+                <th>Teacher Username</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in subjects %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>
+                        <form method="POST" action="/delete_subject">
+                            <input type="hidden" name="subject_name" value="{{ row[0] }}">
+                            <input type="hidden" name="teacher_username" value="{{ row[1] }}">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/admin/dashboard">Back</a>
+</body>
+</html>

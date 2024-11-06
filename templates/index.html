@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <h1>AttendEase</h1>
+    <form method="post" action="/login">
+        <input type="submit" name="user_type" value="Admin">
+        <input type="submit" name="user_type" value="Student">
+        <input type="submit" name="user_type" value="Teacher">
+    </form>
+</body>
+</html>

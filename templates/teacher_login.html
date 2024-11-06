@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='teacher_login.css') }}">
+ 
+</head>
+<body>
+    <div class="container">
+    <h2>TEACHER LOGIN</h2>
+    <form action="/teacher/login" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <p>Forgot your password? <a href="/teacher/set_password">Set Password</a></p>
+    </div>
+</body>
+</html>

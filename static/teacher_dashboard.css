@@ -1,0 +1,83 @@
+/* teacher_dashboard.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-image: url('dark.png');
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color:white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #dee2e6;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+th {
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    height: 70px;
+}
+
+form {
+    text-align: center;
+}
+
+input[type="number"], input[type="submit"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+a { 
+    font-size: 15px;
+    font-style:normal;
+    display: block; /* Changed to block to center horizontally */
+    text-align: center; /* Center the text */
+    text-decoration: none;
+    padding: 10px 30px;
+    background-color: #3873f2; /* Blue color */
+    color: #fff; /* White color for text */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    margin: 30px auto; /* Center horizontally and add margin */
+    width: fit-content; /* Adjust width to content */
+}
+
+a:hover {
+    background-color: #f3480a; /* Darker blue color on hover */
+}

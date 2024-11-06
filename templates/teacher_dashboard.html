@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='teacher_dashboard.css') }}">
+</head>
+<body>
+    <h1>Welcome, {{ teacher_username }}</h1>
+    <h2>Subject: {{ subject }}</h2>
+    <h2>Total Classes Taken: {{ total_classes_taken }}</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Total Classes Present</th>
+                <th>Attendance Percentage</th>
+                <th>Update Classes Present</th>  
+            </tr>
+        </thead>
+        <tbody>
+            {% for student_id, classes_taken, attendance_percentage in attendance_data %}
+            <tr>
+                <td>{{ student_id }}</td>
+                <td>{{ classes_taken }}</td>
+                <td>{{ attendance_percentage|round(2)}}</td>
+                <td>
+                    <form action="/teacher/dashboard" method="POST">
+                        <input type="hidden" name="student_id" value="{{ student_id }}">
+                        <input type="number" name="classes_present" value="{{ classes_present }}">
+                        <input type="submit" value="Update">
+                    </form>
+                    
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/">Logout</a>
+</body>
+</html>

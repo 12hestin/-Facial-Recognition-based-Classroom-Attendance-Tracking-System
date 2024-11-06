@@ -1,0 +1,57 @@
+body {
+    
+    
+    font-family: Arial, sans-serif;
+    background-image:url('dark.png');
+    background-size: cover;    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    font-size: 20px;
+    font-weight: bolder;
+ 
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+h1 {
+    text-align: center;
+    color: #fdfafa;
+    margin-top: 150px;
+    padding: 50px 0;
+    font-size: 100px;
+
+}
+
+form {
+   
+   height: 150px;
+    width: 800px;
+    margin: 0 auto;
+    text-align: center;
+   
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Distribute space between elements */
+}
+
+/* Set display property of form elements to block */
+input[type="submit"] {
+    width: 25%; /* Adjust width based on preference */
+    padding: 40px;
+    border: none;
+    background-color: #206692;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+    font-weight: 700;
+    font-size: 25px;
+    font: style 800px;
+
+}
+
+input[type="submit"]:hover {
+    background-color: #11d224;
+}
